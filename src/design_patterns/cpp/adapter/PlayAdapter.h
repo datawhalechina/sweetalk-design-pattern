@@ -1,9 +1,9 @@
 //
-// Created by HRF on 2022/9/20.
+// Created by HuRF on 2022/9/20.
 //
 
-#ifndef _PLAYADAPTER_H
-#define _PLAYADAPTER_H
+#ifndef PLAYADAPTER_H
+#define PLAYADAPTER_H
 
 #include <string>
 
@@ -84,4 +84,4 @@ public:
     void Defense() override;
 };
 
-#endif // _PLAYADAPTER_H
+#endif // PLAYADAPTER_H
