@@ -5,3 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 # 适配器模式
 add_executable(play_adapter adapter/PlayAdapter.cpp adapter/main.cpp)
+# 备忘录模式
+add_executable(game_memento memento/GameRoleMemento.cpp memento/main.cpp)
