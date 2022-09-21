@@ -19,3 +19,5 @@ add_executable(singleton_lazy singleton/Singleton.cpp)
 add_executable(singleton_multi_thread singleton/SingletonMultiThread.cpp)
 # 双重锁定的单例模式
 add_executable(singleton_double_check singleton/SingletonDoubleCheck.cpp)
+# 桥接模式
+add_executable(handset_bridge bridge/HandsetBridge.cpp bridge/main.cpp)
