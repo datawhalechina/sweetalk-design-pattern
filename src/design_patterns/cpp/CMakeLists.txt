@@ -21,3 +21,5 @@ add_executable(singleton_multi_thread singleton/SingletonMultiThread.cpp)
 add_executable(singleton_double_check singleton/SingletonDoubleCheck.cpp)
 # 桥接模式
 add_executable(handset_bridge bridge/HandsetBridge.cpp bridge/main.cpp)
+# 命令模式
+add_executable(order_command command/OrderCommand.cpp command/main.cpp)
