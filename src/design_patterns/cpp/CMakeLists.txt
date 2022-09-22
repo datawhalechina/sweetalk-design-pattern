@@ -27,3 +27,7 @@ add_executable(order_command command/OrderCommand.cpp command/main.cpp)
 add_executable(raise_chain_of_responsibility chain_of_responsibility/Raise.cpp chain_of_responsibility/main.cpp)
 # 中介者模式
 add_executable(united_nations_mediator mediator/UNMediator.cpp mediator/main.cpp)
+# 享元模式
+add_executable(website_flyweight flyweight/WebSite.cpp flyweight/main.cpp)
+# 解释器模式
+add_executable(music_interpreter interpreter/MusicInterpreter.cpp interpreter/main.cpp)
