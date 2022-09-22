@@ -31,3 +31,5 @@ add_executable(united_nations_mediator mediator/UNMediator.cpp mediator/main.cpp
 add_executable(website_flyweight flyweight/WebSite.cpp flyweight/main.cpp)
 # 解释器模式
 add_executable(music_interpreter interpreter/MusicInterpreter.cpp interpreter/main.cpp)
+# 访问者模式
+add_executable(man_woman_visitor visitor/ManWomanVisitor.cpp visitor/main.cpp)
