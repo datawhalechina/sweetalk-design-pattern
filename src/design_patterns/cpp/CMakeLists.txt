@@ -23,3 +23,13 @@ add_executable(singleton_double_check singleton/SingletonDoubleCheck.cpp)
 add_executable(handset_bridge bridge/HandsetBridge.cpp bridge/main.cpp)
 # 命令模式
 add_executable(order_command command/OrderCommand.cpp command/main.cpp)
+# 职责链模式
+add_executable(raise_chain_of_responsibility chain_of_responsibility/Raise.cpp chain_of_responsibility/main.cpp)
+# 中介者模式
+add_executable(united_nations_mediator mediator/UNMediator.cpp mediator/main.cpp)
+# 享元模式
+add_executable(website_flyweight flyweight/WebSite.cpp flyweight/main.cpp)
+# 解释器模式
+add_executable(music_interpreter interpreter/MusicInterpreter.cpp interpreter/main.cpp)
+# 访问者模式
+add_executable(man_woman_visitor visitor/ManWomanVisitor.cpp visitor/main.cpp)
