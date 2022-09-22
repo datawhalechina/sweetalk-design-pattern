@@ -23,3 +23,5 @@ add_executable(singleton_double_check singleton/SingletonDoubleCheck.cpp)
 add_executable(handset_bridge bridge/HandsetBridge.cpp bridge/main.cpp)
 # 命令模式
 add_executable(order_command command/OrderCommand.cpp command/main.cpp)
+# 职责链模式
+add_executable(raise_chain_of_responsibility chain_of_responsibility/Raise.cpp chain_of_responsibility/main.cpp)
