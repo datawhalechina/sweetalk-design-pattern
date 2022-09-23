@@ -32,9 +32,9 @@ public:
     void Fight();
 
     // 保存角色状态
-    RoleStateMemento SaveState() const;
+    RoleStateMemento * SaveState();
     // 恢复角色状态
-    void RecoveryState(RoleStateMemento memento);
+    void RecoveryState(RoleStateMemento *memento);
 };
 
 // 角色状态存储箱类
@@ -56,10 +56,10 @@ public:
 // 角色状态管理者类
 class RoleStateCaretaker{
 private:
-    RoleStateMemento memento = {0, 0, 0};
+    RoleStateMemento * memento;
 public:
-    void SetRoleStateMemento(const RoleStateMemento &v);
-    RoleStateMemento GetRoleStateMemento() const;
+    void SetRoleStateMemento(RoleStateMemento * roleStateMemento);
+    RoleStateMemento * GetRoleStateMemento();
 
     RoleStateCaretaker();
     ~RoleStateCaretaker() = default;

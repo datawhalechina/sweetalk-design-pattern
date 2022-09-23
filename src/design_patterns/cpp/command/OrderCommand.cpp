@@ -12,25 +12,6 @@ using namespace std;
 
 string get_current_time();
 
-class BakeMap {
-protected:
-    map<string, string> bakeMap = {};
-public:
-    BakeMap() {
-        bakeMap[typeid(BakeMuttonCommand).name()] = "烤羊肉串";
-        bakeMap[typeid(BakeChickenWingCommand).name()] = "烤鸡翅";
-    };
-
-    string get_command_cn_name(const string& command_name) {
-        for (const auto &bake : bakeMap) {
-            if (command_name.find(bake.first) != -1) {
-                return bake.second;
-            }
-        }
-        return "未知烤串";
-    }
-};
-
 void Barbecuer::BakeMutton() {
     std::cout << "烤羊肉串！" << std::endl;
 }
@@ -39,39 +20,37 @@ void Barbecuer::BakeChickenWing() {
     std::cout << "烤鸡翅！" << std::endl;
 }
 
-Command::Command(Barbecuer &receiver) {
-    this->receiver = &receiver;
-}
+Command::Command(Barbecuer *receiver):receiver(receiver), name("") {}
 
 
-BakeMuttonCommand::BakeMuttonCommand(Barbecuer &receiver) : Command(receiver) {
+BakeMuttonCommand::BakeMuttonCommand(Barbecuer *receiver) : Command(receiver) {
+    this->name = "烤羊肉串";
 }
 
 void BakeMuttonCommand::ExecuteCommand() {
     receiver->BakeMutton();
 }
 
-BakeChickenWingCommand::BakeChickenWingCommand(Barbecuer &receiver) : Command(receiver) {
+BakeChickenWingCommand::BakeChickenWingCommand(Barbecuer *receiver) : Command(receiver) {
+    this->name = "烤鸡翅";
 }
 
 void BakeChickenWingCommand::ExecuteCommand() {
     receiver->BakeChickenWing();
 }
 
-
-void Waiter::SetOrder(Command &command) {
-    auto * bake = new BakeMap();
-    if (static_cast<string>(typeid(command).name()).find("BakeChickenWingCommand") != -1) {
+void Waiter::SetOrder(Command *command) {
+    if (command->name == "烤鸡翅") {
         std::cout << "服务员：鸡翅没有了，请点别的烧烤。" << std::endl;
     } else {
-        orders.push_back(&command);
-        std::cout << "增加订单：" << bake->get_command_cn_name((string) typeid(command).name());
+        orders.push_back(command);
+        std::cout << "增加订单：" << command->name;
         std::cout << " 时间：" << get_current_time() << std::endl;
     }
 }
 
-void Waiter::CancelOrder(Command &command) {
-    orders.remove(&command);
+void Waiter::CancelOrder(Command *command) {
+    orders.remove(command);
     std::cout << "取消订单：" << typeid(command).name();
     std::cout << " 时间：" << get_current_time() << std::endl;
 }

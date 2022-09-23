@@ -1,6 +1,6 @@
 * [目录](README.md)
     * [前言](content/introduction.md)
-    * 设计原则
+    * [设计原则](content/design_principles/README.md)
       * [单一职责原则](content/design_principles/single_responsiblity_principle.md)
       * [开闭原则](content/design_principles/open_closed_principle.md)
       * [依赖倒置原则](content/design_principles/dependence_inversion_principle.md)

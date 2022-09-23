@@ -19,22 +19,22 @@ public:
 
     virtual ~Component() = default;
 
-    virtual void Add(Component &c) {};
+    virtual void Add(Component *c) {};
 
-    virtual void Remove(Component &c) {};
+    virtual void Remove(Component *c) {};
 
     virtual void Display(int depth) {};
 
-    bool operator==(const Component &c);
+    bool operator==(Component *c);
 };
 
 class Leaf : public Component {
 public:
     explicit Leaf(string n) : Component(std::move(n)) {};
 
-    void Add(Component &c) override;
+    void Add(Component *c) override;
 
-    void Remove(Component &c) override;
+    void Remove(Component *c) override;
 
     void Display(int depth) override;
 };
@@ -45,12 +45,11 @@ private:
 public:
     explicit Composite(string n) : Component(std::move(n)) {};
 
-    void Add(Component &c) override;
+    void Add(Component *c) override;
 
-    void Remove(Component &c) override;
+    void Remove(Component *c) override;
 
     void Display(int depth) override;
-
 };
 
 #endif //COMPONENTCOMPOSITE_H
