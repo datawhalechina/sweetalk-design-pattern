@@ -51,14 +51,14 @@ void GameRoleMemento::Fight() {
     this->def = 0;
 }
 
-RoleStateMemento GameRoleMemento::SaveState() const {
-    return {vit, atk, def};
+RoleStateMemento * GameRoleMemento::SaveState() {
+    return new RoleStateMemento{vit, atk, def};
 }
 
-void GameRoleMemento::RecoveryState(RoleStateMemento memento) {
-    this->vit = memento.GetVitality();
-    this->atk = memento.GetAtk();
-    this->def = memento.GetDenfense();
+void GameRoleMemento::RecoveryState(RoleStateMemento *memento) {
+    this->vit = memento->GetVitality();
+    this->atk = memento->GetAtk();
+    this->def = memento->GetDenfense();
 }
 
 
@@ -93,11 +93,11 @@ int RoleStateMemento::GetDenfense() const {
 }
 
 
-void RoleStateCaretaker::SetRoleStateMemento(const RoleStateMemento &v) {
-    this->memento = v;
+void RoleStateCaretaker::SetRoleStateMemento(RoleStateMemento *roleStateMemento) {
+    this->memento = roleStateMemento;
 }
 
-RoleStateMemento RoleStateCaretaker::GetRoleStateMemento() const {
+RoleStateMemento * RoleStateCaretaker::GetRoleStateMemento(){
     return this->memento;
 }
 

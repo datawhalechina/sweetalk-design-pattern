@@ -6,9 +6,9 @@
 int main() {
     // 开店前的准备
     Barbecuer *boy = new Barbecuer();
-    BakeMuttonCommand bakeMuttonCommand1(*boy);
-    BakeMuttonCommand bakeMuttonCommand2(*boy);
-    BakeChickenWingCommand bakeChickenWingCommand1(*boy);
+    BakeMuttonCommand * bakeMuttonCommand1 = new BakeMuttonCommand(boy);
+    BakeMuttonCommand * bakeMuttonCommand2 = new BakeMuttonCommand(boy);
+    BakeChickenWingCommand * bakeChickenWingCommand1 = new BakeChickenWingCommand(boy);
     Waiter *girl = new Waiter();
 
     // 开门营业，顾客点菜

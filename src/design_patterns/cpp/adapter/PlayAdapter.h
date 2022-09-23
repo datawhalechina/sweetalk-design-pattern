@@ -19,10 +19,10 @@ public:
     explicit Player(string n);
 
     // 进攻
-    virtual void Attack() {};
+    virtual void Attack() = 0 ;
 
     // 防守
-    virtual void Defense() {};
+    virtual void Defense() = 0;
 };
 
 // 前锋

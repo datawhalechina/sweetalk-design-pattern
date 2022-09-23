@@ -4,8 +4,6 @@
 
 #include "WebSite.h"
 
-#include <utility>
-
 #include <iostream>
 
 using namespace std;
@@ -31,5 +29,5 @@ WebSite *WebSiteFactory::GetWebSiteCategory(const string &key) {
 }
 
 int WebSiteFactory::GetWebSiteCount() {
-    return flyweights.size();
+    return (int) flyweights.size();
 }

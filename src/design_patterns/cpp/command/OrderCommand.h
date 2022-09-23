@@ -6,6 +6,7 @@
 #define ORDERCOMMAND_H
 
 #include <list>
+#include <string>
 
 using namespace std;
 
@@ -23,7 +24,8 @@ class Command {
 protected:
     Barbecuer * receiver;
 public:
-    explicit Command(Barbecuer &receiver);
+    string name;
+    explicit Command(Barbecuer *receiver);
     // 执行命令
     virtual void ExecuteCommand() = 0;
 };
@@ -31,14 +33,14 @@ public:
 // 烤羊肉串命令
 class BakeMuttonCommand : public Command {
 public:
-    explicit BakeMuttonCommand(Barbecuer &receiver);
+    explicit BakeMuttonCommand(Barbecuer *receiver);
     void ExecuteCommand() override;
 };
 
 // 烤鸡翅命令
 class BakeChickenWingCommand : public Command {
 public:
-    explicit BakeChickenWingCommand(Barbecuer &receiver);
+    explicit BakeChickenWingCommand(Barbecuer *receiver);
     void ExecuteCommand() override;
 };
 
@@ -47,8 +49,8 @@ class Waiter {
 private:
     list<Command *> orders;
 public:
-    void SetOrder(Command &command);
-    void CancelOrder(Command &command);
+    void SetOrder(Command *command);
+    void CancelOrder(Command *command);
     void Notify();
 };
 

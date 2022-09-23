@@ -9,16 +9,16 @@ using namespace std;
 
 Component::Component(string n) : name(std::move(n)) {}
 
-bool Component::operator==(const Component &c) {
-    return this->name == c.name;
+bool Component::operator==(Component *c) {
+    return this->name == c->name;
 }
 
 
-void Leaf::Add(Component &c) {
+void Leaf::Add(Component *c) {
     std::cout << "Cannot add to a leaf" << std::endl;
 }
 
-void Leaf::Remove(Component &c) {
+void Leaf::Remove(Component *c) {
     std::cout << "Cannot remove from a leaf" << std::endl;
 }
 
@@ -27,12 +27,12 @@ void Leaf::Display(int depth) {
     std::cout << string(depth, '-') << name << std::endl;
 }
 
-void Composite::Add(Component &c) {
-    this->children.push_back(&c);
+void Composite::Add(Component *c) {
+    this->children.push_back(c);
 }
 
-void Composite::Remove(Component &c) {
-    this->children.remove(&c);
+void Composite::Remove(Component *c) {
+    this->children.remove(c);
 }
 
 void Composite::Display(int depth) {
