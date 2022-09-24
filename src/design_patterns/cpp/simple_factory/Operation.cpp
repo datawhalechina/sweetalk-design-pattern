@@ -7,10 +7,7 @@ using namespace std;
 class OperationAdd : public Operation
 {
 public:
-    OperationAdd() : Operation(){};
-    virtual ~OperationAdd(){};
-
-    double GetResult() const override
+    double getResult() const override
     {
         double result = 0;
         result = m_numberA + m_numberB;
@@ -20,10 +17,7 @@ public:
 class OperationSub : public Operation
 {
 public:
-    OperationSub() : Operation(){};
-    virtual ~OperationSub(){};
-
-    double GetResult() const override
+    double getResult() const override
     {
         double result = 0;
         result = m_numberA - m_numberB;
@@ -34,10 +28,7 @@ public:
 class OperationMul : public Operation
 {
 public:
-    OperationMul() : Operation(){};
-    virtual ~OperationMul(){};
-
-    double GetResult() const override
+    double getResult() const override
     {
         double result = 0;
         result = m_numberA * m_numberB;
@@ -48,10 +39,7 @@ public:
 class OperationDiv : public Operation
 {
 public:
-    OperationDiv() : Operation(){};
-    virtual ~OperationDiv(){};
-
-    double GetResult() const override
+    double getResult() const override
     {
         double result = 0;
         if (m_numberB == 0)
@@ -102,9 +90,8 @@ int main()
         oper = OperationFactory::createOperate(operate[0]);
         oper->setNumberA(stod(numA));
         oper->setNumberB(stod(numB));
-        double result = oper->GetResult();
+        double result = oper->getResult();
         cout << result << endl;
-        delete oper;
     }
     catch (char *msg)
     {

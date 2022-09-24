@@ -4,9 +4,7 @@
 class Operation
 {
 public:
-    Operation(){};
-    virtual ~Operation(){};
-    virtual double GetResult() const = 0;
+    virtual double getResult() const = 0;
 
     void setNumberA(double numberA) { m_numberA = numberA; }
     void setNumberB(double numberB) { m_numberB = numberB; }
