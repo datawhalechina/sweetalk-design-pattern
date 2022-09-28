@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.20)
-project(sweetalk-design-pattern)
+#cmake_minimum_required(VERSION 3.20)
+#project(sweetalk-design-pattern)
 
-set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_CXX_STANDARD 14)
 
 # 适配器模式
 add_executable(play_adapter adapter/PlayAdapter.cpp adapter/main.cpp)
