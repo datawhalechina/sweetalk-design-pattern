@@ -5,10 +5,23 @@
 using namespace std;
 
 
-Person::Person(enum Person::Color color)
-{
-    m_color = color;
+Pen::Pen(enum Color color)
+{   
+    int v = static_cast<typename underlying_type<Color>::type>(color);
+    switch (v)
+    {
+    case Color::yellow:
+        cout << "使用黄色画笔" << endl;;
+        break;
+    case Color::white:
+        cout << "使用白色画笔" << endl;;
+        break;
+    case Color::blank:
+        cout << "使用黑色画笔" << endl;
+        break;
+    }
 }
+
 
 void Person::add(string part)
 {
@@ -30,132 +43,146 @@ void print(string action, int a, int b, int c, int d)
 }
 
 
-void Graphics::drawEllipse(Person * p, int a, int b, int c, int d)
+void Graphics::drawEllipse(Pen * p, int a, int b, int c, int d)
 {
     print("draw ellipse", a, b, c, d);
 }
 
-void Graphics::drawRectangle(Person * p, int a, int b, int c, int d)
+void Graphics::drawRectangle(Pen * p, int a, int b, int c, int d)
 {
     print("draw rectangle", a, b, c, d);
 }
 
-void Graphics::drawLine(Person * p, int a, int b, int c, int d)
+void Graphics::drawLine(Pen * p, int a, int b, int c, int d)
 {
     print("draw line", a, b, c, d);
 }
 
 
+Builder::Builder(Graphics * g, Pen * p)
+{
+    m_g = g;
+    m_pen = p;
+}
+
+ThinBuilder::ThinBuilder(Graphics * g, Pen * p): Builder(g, p){};
+
 void ThinBuilder::buildHead()
 {
-    m_g->drawEllipse(m_p, 50, 20, 30, 30);
-    m_p->add("头部");
+    m_g->drawEllipse(m_pen, 50, 20, 30, 30);
+    m_per->add("头部");
 }
 
 void ThinBuilder::buildBody()
 {
-    m_g->drawRectangle(m_p, 50, 20, 30, 30);
-    m_p->add("身体");
+    m_g->drawRectangle(m_pen, 50, 20, 30, 30);
+    m_per->add("身体");
 }
 
 void ThinBuilder::buildArmLeft()
 {
-    m_g->drawLine(m_p, 50, 20, 30, 30);
-    m_p->add("左手");
+    m_g->drawLine(m_pen, 50, 20, 30, 30);
+    m_per->add("左手");
 }
 
 void ThinBuilder::buildArmRight()
 {
-    m_g->drawLine(m_p, 50, 20, 30, 30);
-    m_p->add("右手");
+    m_g->drawLine(m_pen, 50, 20, 30, 30);
+    m_per->add("右手");
 }
 
 void ThinBuilder::buildLegLeft()
 {
-    m_g->drawLine(m_p, 50, 20, 30, 30);
-    m_p->add("左腿");
+    m_g->drawLine(m_pen, 50, 20, 30, 30);
+    m_per->add("左腿");
 }
 
 void ThinBuilder::buildLegRight()
 {
-    m_g->drawLine(m_p, 50, 20, 30, 30);
-    m_p->add("右腿");
+    m_g->drawLine(m_pen, 50, 20, 30, 30);
+    m_per->add("右腿");
 }
 
 Person * ThinBuilder::getPerson()
 {
-    return m_p;
+    return m_per;
 }
 
 void FatBuilder::buildHead()
 {
-    m_g->drawEllipse(m_p, 50, 20, 30, 30);
-    m_p->add("头部");
+    m_g->drawEllipse(m_pen, 50, 20, 30, 30);
+    m_per->add("头部");
 }
 
 void FatBuilder::buildBody()
 {
-    m_g->drawRectangle(m_p, 60, 50, 10, 50);
-    m_p->add("身体");
+    m_g->drawRectangle(m_pen, 60, 50, 10, 50);
+    m_per->add("身体");
 }
 
 void FatBuilder::buildArmLeft()
 {
-    m_g->drawLine(m_p, 60, 50, 40, 100);
-    m_p->add("左手");
+    m_g->drawLine(m_pen, 60, 50, 40, 100);
+    m_per->add("左手");
 }
 
 void FatBuilder::buildArmRight()
 {
-    m_g->drawLine(m_p, 70, 50, 40, 100);
-    m_p->add("右手");
+    m_g->drawLine(m_pen, 70, 50, 40, 100);
+    m_per->add("右手");
 }
 
 void FatBuilder::buildLegLeft()
 {
-    m_g->drawLine(m_p, 60, 100, 45, 150);
-    m_p->add("左腿");
+    m_g->drawLine(m_pen, 60, 100, 45, 150);
+    m_per->add("左腿");
 }
 
 void FatBuilder::buildLegRight()
 {
-    m_g->drawLine(m_p, 70, 100, 85, 150);
-    m_p->add("右腿");
+    m_g->drawLine(m_pen, 70, 100, 85, 150);
+    m_per->add("右腿");
 }
 
 Person * FatBuilder::getPerson()
 {
-    return m_p;
+    return m_per;
 }
 
-
-void Director::createPerson(Builder * builder)
+Director::Director(Builder * b)
 {
-    builder->buildHead();
-    builder->buildBody();
-    builder->buildArmLeft();
-    builder->buildArmRight();
-    builder->buildLegLeft();
-    builder->buildLegRight();
+    m_b = b;
+}
+
+void Director::createPerson()
+{
+    m_b->buildHead();
+    m_b->buildBody();
+    m_b->buildArmLeft();
+    m_b->buildArmRight();
+    m_b->buildLegLeft();
+    m_b->buildLegRight();
 }
 
 
 int main()
-{
-    Director * director = new Director();
-    
-    Builder * bc = new ThinBuilder();
-    Builder * bf = new FatBuilder();
+{   
+    Pen * p = new Pen(Color::yellow);
+    Graphics * g = new Graphics();
 
-    cout << "开始创建瘦子" << endl;
-    director->createPerson(bc);
-    Person * p1 = bc->getPerson();
-    p1->show();
+    cout << "\n\n开始创建瘦子" << endl;
+    ThinBuilder * tb = new ThinBuilder(g, p);
+    Director * dtb = new Director(tb);
+    dtb->createPerson();
+    Person * tp = tb->getPerson();
+    tp->show();
 
     cout << "\n\n开始创建胖子" << endl;
-    director->createPerson(bf);
-    Person * p2 = bf->getPerson();
-    p2->show();
+    ThinBuilder * fb = new ThinBuilder(g, p);
+    Director * dfb = new Director(fb);
+    dfb->createPerson();
+    Person * fp = fb->getPerson();
+    fp->show();
 
     return 0;
 }
