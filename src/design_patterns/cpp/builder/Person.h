@@ -1,3 +1,4 @@
+#include <string>
 #include <list>
 
 using namespace std;
@@ -18,6 +19,9 @@ class Pen
 {
 public:
     Pen(enum Color color);
+    void getColor();
+private:
+    Color m_color;
 };
 
 class Graphics
@@ -32,7 +36,6 @@ public:
 class Builder
 {
 public:
-    Builder(Graphics * g, Pen * p);
     virtual void buildHead() = 0;
     virtual void buildBody() = 0;
     virtual void buildArmLeft() = 0;
@@ -40,10 +43,6 @@ public:
     virtual void buildLegLeft() = 0;
     virtual void buildLegRight() = 0;
     virtual Person * getPerson() = 0;
-private:
-    Graphics * m_g;
-    Pen * m_pen;
-    Person * m_per;
 };
 
 class ThinBuilder: public Builder
@@ -67,6 +66,7 @@ private:
 class FatBuilder: public Builder
 {
 public:
+    FatBuilder(Graphics * g, Pen * p);
     void buildHead() override;
     void buildBody() override;
     void buildArmLeft() override;

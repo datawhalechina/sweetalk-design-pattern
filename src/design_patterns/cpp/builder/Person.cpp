@@ -1,27 +1,9 @@
 #include <iostream>
+#include <string>
 
 #include "Person.h"
 
 using namespace std;
-
-
-Pen::Pen(enum Color color)
-{   
-    int v = static_cast<typename underlying_type<Color>::type>(color);
-    switch (v)
-    {
-    case Color::yellow:
-        cout << "使用黄色画笔" << endl;;
-        break;
-    case Color::white:
-        cout << "使用白色画笔" << endl;;
-        break;
-    case Color::blank:
-        cout << "使用黑色画笔" << endl;
-        break;
-    }
-}
-
 
 void Person::add(string part)
 {
@@ -37,35 +19,56 @@ void Person::show()
     }
 }
 
+Pen::Pen(Color color)
+{
+    m_color = color;
+}
+
+void Pen::getColor()
+{
+    switch(m_color)
+    {
+    case Color::yellow:
+        cout << "使用黄色画笔";
+        break;
+    case Color::white:
+        cout << "使用白色画笔";
+        break;
+    case Color::blank:
+        cout << "使用黑色画笔";
+        break;
+    }
+}
+
 void print(string action, int a, int b, int c, int d)
 {
-    cout << action << ": " << a << " " << b << " " << c << " " << d << endl;
+    cout << action << a << " " << b << " " << c << " " << d << endl;
 }
 
 
 void Graphics::drawEllipse(Pen * p, int a, int b, int c, int d)
 {
-    print("draw ellipse", a, b, c, d);
+    p->getColor();
+    print("画圆：", a, b, c, d);
 }
 
 void Graphics::drawRectangle(Pen * p, int a, int b, int c, int d)
 {
-    print("draw rectangle", a, b, c, d);
+    p->getColor();
+    print("画方：", a, b, c, d);
 }
 
 void Graphics::drawLine(Pen * p, int a, int b, int c, int d)
 {
-    print("draw line", a, b, c, d);
+    p->getColor();
+    print("画线：", a, b, c, d);
 }
 
-
-Builder::Builder(Graphics * g, Pen * p)
+ThinBuilder::ThinBuilder(Graphics * g, Pen * p)
 {
     m_g = g;
     m_pen = p;
-}
-
-ThinBuilder::ThinBuilder(Graphics * g, Pen * p): Builder(g, p){};
+};
 
 void ThinBuilder::buildHead()
 {
@@ -107,6 +110,12 @@ Person * ThinBuilder::getPerson()
 {
     return m_per;
 }
+
+FatBuilder::FatBuilder(Graphics * g, Pen * p)
+{
+    m_g = g;
+    m_pen = p;
+};
 
 void FatBuilder::buildHead()
 {
@@ -178,7 +187,7 @@ int main()
     tp->show();
 
     cout << "\n\n开始创建胖子" << endl;
-    ThinBuilder * fb = new ThinBuilder(g, p);
+    FatBuilder * fb = new FatBuilder(g, p);
     Director * dfb = new Director(fb);
     dfb->createPerson();
     Person * fp = fb->getPerson();
