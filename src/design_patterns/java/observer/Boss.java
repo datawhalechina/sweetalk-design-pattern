@@ -18,7 +18,7 @@ public class Boss implements Subject {
     }
 
     @Override
-    public void notity() {
+    public void inform() {
         for(Observer o : observers){
             o.update();
         }
