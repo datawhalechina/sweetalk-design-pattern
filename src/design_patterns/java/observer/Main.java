@@ -12,6 +12,6 @@ public class Main {
 
         huhansan.detach(tongshi1);
         huhansan.setSubjectState("我胡汉三回来了！");
-        huhansan.notity();
+        huhansan.inform();
     }
 }
