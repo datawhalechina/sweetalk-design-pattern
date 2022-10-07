@@ -9,9 +9,6 @@
 '''
 
 # 球员
-from symbol import yield_stmt
-
-
 class Player(object):
     name = ""
     def __init__(self,name):
