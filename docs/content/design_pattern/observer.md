@@ -35,5 +35,5 @@
 - 推模型：Subject 起主导作用，向 Observer 推送。
 - 拉模型：Subject 对变化进行广播，由 Observer 负责拉取更新。
 
-![](img/observer.jpeg)
+![](img/observer/observer.jpeg)
 

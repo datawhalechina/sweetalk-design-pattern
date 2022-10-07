@@ -22,4 +22,4 @@
 
 - 一般在开发后期或维护期，双方都比较稳定、不太容易修改时候才会使用。
 
-![](img/adapter.jpeg)
+![](img/adapter/adapter.jpeg)

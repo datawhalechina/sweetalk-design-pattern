@@ -29,4 +29,4 @@
 - 可以根据需要与简单工厂、工厂方法结合起来使用。
 - 一般不在开发初期使用，通常从简单工厂或工厂方法开始。
 
-![](img/abstract_factory.jpeg)
+![](img/abstract_factory/abstract_factory.jpeg)
