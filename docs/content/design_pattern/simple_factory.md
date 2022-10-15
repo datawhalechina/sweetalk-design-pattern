@@ -22,9 +22,9 @@
 
 ### 1.4 代码实现
 
-* C++语言实现：[链接]("/../../../../src/design_patterns/cpp/simple_factory/")
-* Java语言实现：[链接]("/../../../../src/design_patterns/java/simple_factory/")
-* python语言实现：[链接]("/../../../../src/design_patterns/python/simple_factory/SimpleFactory.py")
+* C++语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/cpp/simple_factory/")
+* Java语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/java/simple_factory/")
+* python语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/python/simple_factory/SimpleFactory.py")
 * C#语言实现见原书第二版。
 
 ## 2 模式介绍
@@ -35,13 +35,10 @@
 
 ### 2.2 结构
 
+&emsp;&emsp;以上述问题为例，结构如下
+
+![简单工厂模式UML](img/simple_factory/SimpleFactoryUML.png)
 
 ## 3 适用场景
 
 &emsp;&emsp;将类类比为产品，则使用者可以在不清楚类生产的具体过程的情况下，使用不同的产品。
-
-## 4 评价
-
-### 4.1 优点
-
-### 4.2 缺点
