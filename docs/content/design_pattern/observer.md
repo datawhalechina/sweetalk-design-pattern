@@ -33,7 +33,7 @@
 
 ![](img/observer/observer.jpeg)
 
-**实现**
+**代码实现**
 
 - C++ 实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/observer)
 - Java 实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/observer)
@@ -46,7 +46,7 @@
 - 当一个对象的改变需要同时改变多个（不知道具体数目）对象时。
 - 当一个抽象模型的两个方面一方依赖于另一方时，将两者封装在独立的对象中。
 
-**实际案例**
+**实际应用**
 
 实际中的例子：批量自动更新。
 
@@ -61,7 +61,7 @@
 - Subject 和 Observer 之间松耦合，可以轻松扩展。
 - 支持广播通信，不需要指定接收者，而且可以随时增删 Observer。
 
-**模式缺点**
+**不足之处**
 
 - 不同的订阅者可能需要不同的更新（功能），而不是所有的都一样。
 - Subject 依赖于 Observer 对抽象接口的实现，没有实现就无法通知。
