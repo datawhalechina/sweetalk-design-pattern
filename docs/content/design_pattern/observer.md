@@ -16,6 +16,8 @@
 
 观察者模式的关键对象是主题 Subject 和观察者 Observer，一个 Subject 可以有多个 Observer，它不关心到底有哪些 Observer，Observer 之间也不需要知道彼此存在。当 Subject 的状态发生变化时，所有的 Observer 都会得到通知。当然，反过来一个 Observer 可以订阅多个 Subject，任意一个 Subject 的状态发生变化，该 Observer 都会得到通知。这样就既解决了一致性问题，又不会过紧耦合。
 
+上面的例子中，针对各个领导的群就是 Subject，员工则是 Observer。
+
 ## 模式介绍
 
 **模式定义**
