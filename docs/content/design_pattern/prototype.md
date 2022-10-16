@@ -69,4 +69,4 @@
 - 必须实现Cloneable接口。
 
 ## 5 参考资料
-1. [原型模式 - 菜鸟教程](https://www.runoob.com/design-pattern/prototype-pattern.html)
+&emsp;&emsp;[原型模式 - 菜鸟教程](https://www.runoob.com/design-pattern/prototype-pattern.html)

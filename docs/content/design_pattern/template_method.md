@@ -56,4 +56,4 @@
 &emsp;&emsp;每一个不同的实现都需要一个子类实现，导致类的个数增加，使得系统更加庞大。
 
 ## 5 参考资料
-1. [模板模式 - 菜鸟教程](https://www.runoob.com/design-pattern/template-pattern.html)
+&emsp;&emsp;[模板模式 - 菜鸟教程](https://www.runoob.com/design-pattern/template-pattern.html)

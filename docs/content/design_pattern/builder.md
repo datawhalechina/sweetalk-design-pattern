@@ -58,6 +58,6 @@
 - 如内部变化复杂，会有很多的建造类
 
 ## 5 参考资料
-[建造者模式 - 菜鸟教程](https://www.runoob.com/design-pattern/builder-pattern.html)
+&emsp;&emsp;[建造者模式 - 菜鸟教程](https://www.runoob.com/design-pattern/builder-pattern.html)
 
 
