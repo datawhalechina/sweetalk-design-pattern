@@ -9,20 +9,26 @@
 '''
 
 # here put the import lib
+
+
 class Subject(object):
     def request(self):
         pass
 
+
 class RealSubject(Subject):
     def request(self):
         print("真实的请求")
-    
+
+
 class Proxy(Subject):
     realSubject = None
+
     def request(self):
-        if self.realSubject == None:
+        if self.realSubject is None:
             self.realSubject = RealSubject()
         self.realSubject.request()
+
 
 if __name__ == '__main__':
     proxy = Proxy()
