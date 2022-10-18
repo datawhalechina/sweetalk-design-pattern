@@ -22,9 +22,9 @@
 
 ### 1.4 代码实现
 
-* C++语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/cpp/simple_factory/")
-* Java语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/java/simple_factory/")
-* python语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/python/simple_factory/SimpleFactory.py")
+* C++语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/simple_factory/)
+* Java语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/simple_factory/)
+* python语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/simple_factory/SimpleFactory.py)
 * C#语言实现见原书第二版。
 
 ## 2 模式介绍
@@ -41,4 +41,4 @@
 
 ## 3 适用场景
 
-&emsp;&emsp;将类类比为产品，则使用者可以在不清楚类生产的具体过程的情况下，使用不同的产品。
+> 将类类比为产品，则使用者可以在不清楚类生产的具体过程的情况下，使用不同的产品。
