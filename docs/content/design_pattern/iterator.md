@@ -22,8 +22,8 @@
 
 迭代器模式主要包括聚集抽象类（Aggregate）、迭代抽象类（Iterator）、具体聚集类（ConcreteAggregate）、具体迭代器类（ConcreteIterator）。
 
-- 迭代抽象类（Iterator）：用于定义各种行为的抽象方法，统一接口
-- 具体迭代器类（ConcreteIterator）：继承 Iterator，实现具体行为的方法
+- 迭代抽象类（Iterator）：用于定义各种行为的抽象方法，统一接口。
+- 具体迭代器类（ConcreteIterator）：继承 Iterator，实现具体行为的方法。
 
 **代码实现**
 
