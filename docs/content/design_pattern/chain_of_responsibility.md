@@ -22,7 +22,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/chain_of_responsibility/chain_of_responsibility.jpg)
+![image-20221017164911912](img/chain_of_responsibility/chain_of_responsibility.JPG)
 
 ### 实现
 

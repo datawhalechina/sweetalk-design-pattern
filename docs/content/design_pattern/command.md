@@ -30,7 +30,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/command/command.jpg)
+![image-20221017164911912](img/command/command.JPG)
 
 ### 实现
 
