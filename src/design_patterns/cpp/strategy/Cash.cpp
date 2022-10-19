@@ -5,44 +5,22 @@
 
 using namespace std;
 
-enum Strategy
-{
-    eNormal,
-    eRebate,
-    eReturn,
-};
-
-Strategy hashit(string const &type)
-{
-    if (type == "正常收费")
-        return eNormal;
-    if (type == "满300返100")
-        return eRebate;
-    if (type == "打8折")
-        return eReturn;
-    return eNormal;
-};
-
-class CashNormal : public CashInterface
+class CashNormal : public Cash
 {
 public:
-    CashNormal() : CashInterface(){};
-    virtual ~CashNormal(){};
-
     double acceptCash(double money) const override
     {
         return money;
     }
 };
 
-class CashRebate : public CashInterface
+class CashRebate : public Cash
 {
 public:
     explicit CashRebate(string moneyRebate)
     {
         m_moneyRebate = stod(moneyRebate);
     }
-    virtual ~CashRebate(){};
 
     double acceptCash(double money) const override
     {
@@ -53,16 +31,14 @@ private:
     double m_moneyRebate = 1.0;
 };
 
-class CashReturn : public CashInterface
+class CashReturn : public Cash
 {
 public:
-    explicit CashReturn(string moneyCondition, string moneyReturn)
+    CashReturn(string moneyCondition, string moneyReturn)
     {
         m_moneyContion = stod(moneyCondition);
         m_moneyReturn = stod(moneyReturn);
     }
-
-    virtual ~CashReturn(){};
 
     double acceptCash(double money) const override
     {
@@ -80,13 +56,12 @@ private:
 class CashContext
 {
 public:
-    CashContext(){};
-    explicit CashContext(CashInterface *cash)
+    explicit CashContext(Cash *cash)
     {
         m_cash = cash;
     };
 
-    void setStrategy(CashInterface *cash)
+    void setStrategy(Cash *cash)
     {
         m_cash = cash;
     }
@@ -97,7 +72,7 @@ public:
     }
 
 private:
-    CashInterface *m_cash;
+    Cash *m_cash;
 };
 
 void print(int price, int count, int totalPrice, string type)
@@ -124,22 +99,22 @@ int main()
         double count = stod(scount);
         double initPrice = price * count;
 
-        CashNormal normal = CashNormal();
-        CashRebate rebate = CashRebate("0.8");
-        CashReturn retun = CashReturn("300", "100");
+        CashNormal *normal = new CashNormal();
+        CashRebate *rebate = new CashRebate("0.8");
+        CashReturn *retun = new CashReturn("300", "100");
 
-        CashContext ctx = CashContext(&normal);
-        totalPrice = ctx.getResult(initPrice);
+        CashContext *ctx = new CashContext(normal);
+        totalPrice = ctx->getResult(initPrice);
         print(price, count, totalPrice, "正常收费");
         total += totalPrice;
 
-        ctx.setStrategy(&retun);
-        totalPrice = ctx.getResult(initPrice);
+        ctx->setStrategy(retun);
+        totalPrice = ctx->getResult(initPrice);
         total += totalPrice;
         print(price, count, totalPrice, "满300返100");
 
-        ctx.setStrategy(&rebate);
-        totalPrice = ctx.getResult(initPrice);
+        ctx->setStrategy(rebate);
+        totalPrice = ctx->getResult(initPrice);
         total += totalPrice;
         print(price, count, totalPrice, "打8折");
 

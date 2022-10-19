@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class CashInterface
+class Cash
 {
 public:
     virtual double acceptCash(double money) const = 0;
