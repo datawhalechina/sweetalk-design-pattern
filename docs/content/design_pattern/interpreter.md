@@ -24,7 +24,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/interpreter/interpreter.jpg)
+![image-20221017164911912](img/interpreter/interpreter.JPG)
 
 ### 实现
 

@@ -22,7 +22,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/mediator/mediator.jpg)
+![image-20221017164911912](img/mediator/mediator.JPG)
 
 ### 实现
 

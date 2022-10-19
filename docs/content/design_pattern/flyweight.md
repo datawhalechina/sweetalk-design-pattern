@@ -22,7 +22,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/flyweight/flyweight.jpg)
+![image-20221017164911912](img/flyweight/flyweight.JPG)
 
 ### 实现
 
