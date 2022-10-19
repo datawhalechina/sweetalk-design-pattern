@@ -24,7 +24,7 @@
 
 ### **结构**
 
-![image-20221017164911912](img/bridge/bridge.jpg)
+![image-20221017164911912](img/bridge/bridge.JPG)
 
 ### 实现
 
