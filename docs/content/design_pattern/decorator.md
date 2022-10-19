@@ -6,11 +6,11 @@
 
 &emsp;&emsp;小菜要去约会，和大鸟聊到穿衣问题。大鸟由穿衣问题引申，要求用C++、Java、python、C#任意一种面向对象语言实现一个可以给人搭配嘻哈服或白领装的系统。控制台输出效果如下：
 
-<img src = img/decorator/example.png width = 70%>
+![](img/decorator/example.png)
 
 &emsp;&emsp;进一步地，对系统实现超人装扮的添加。控制台输出效果如下：
 
-<img src = img/decorator/example2.png width = 70%>
+![](img/decorator/example2.png)
 
 ### 1.2 问题分析
 
@@ -22,22 +22,26 @@
 
 &emsp;&emsp;此时可以考虑使用`装饰模式`来解决问题。
 1. 创建抽象的接口类`Component`，定义给对象动态添加职责的公共接口（在此例中，由于具体的接口只有一个，所以该步也可省略）；
-2. 创建具体的接口`Person`(Concrete Component)，继承于抽象接口类`Component`，定义方法`Show()`用于显示装扮结果；
-3. 创建抽象的装饰类`Finery`（Decorator），继承于接口类`Person`（一般来说继承于抽象接口类`Component`，由于此例只有一个接口，故继承于具体接口类），定义方法`Decorate(component)`用于进行装扮过程，覆写`Show()`具体装扮结果的显示；
-4. 创建系列具体的服饰类（Concrete Decorator），如`Tshirts`，`BigTrouser`等，继承于抽象装饰类`Finery`，实现具体的装饰对象，覆写`Show()`具体装扮结果的显示。
+2. 创建具体的接口`Person`(Concrete Component)，继承于抽象接口类`Component`，同时：    
+    * 定义方法`Show()`用于显示装扮结果；
+3. 创建抽象的装饰类`Finery`（Decorator），继承于接口类`Person`（一般来说继承于抽象接口类`Component`，由于此例只有一个接口，故继承于具体接口类），同时：    
+    * 定义方法`Decorate(component)`用于进行装扮过程；
+    * 覆写`Show()`具体装扮结果的显示；
+4. 创建系列具体的服饰类（Concrete Decorator），如`Tshirts`，`BigTrouser`等，继承于抽象装饰类`Finery`，实现具体的装饰对象，同时：    
+    * 覆写`Show()`具体装扮结果的显示。
 
 ### 1.4 代码实现
 
-* C++语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/cpp/decorator/")
-* Java语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/java/decorator/")
-* python语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/python/decorator/DecoratorFinery.py")
+* C++语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/decorator/)
+* Java语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/decorator/)
+* python语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/decorator/DecoratorFinery.py)
 * C#语言实现见原书第二版。
 
 ## 2 模式介绍
 
 ### 2.1 定义
 
-&emsp;&emsp;装饰模式（Decorator Pattern）是指创建一个装饰类，来包装原有的类，从而实现向一个现有的对象添加一些额外的职责，同时不改变其原有的结构。
+&emsp;&emsp;`装饰模式（Decorator Pattern）`是指创建一个装饰类，来包装原有的类，从而实现向一个现有的对象添加一些额外的职责，同时不改变其原有的结构。
 
 ### 2.2 结构
 
@@ -51,7 +55,7 @@
 
 ## 3 适用场景
 
-&emsp;&emsp;可以在不生成很多子类的情况下扩展类，适用于扩展类需求较多，而又不想引起子类膨胀的场景。
+> 可以在不生成很多子类的情况下扩展类，适用于扩展类需求较多，而又不想引起子类膨胀的场景。
 
 &emsp;&emsp;例如：
 * 通知信息有多种渠道，如通过短信、微信、QQ、邮件等。不同的信息会采用不同的多种渠道组合进行通知，此时若对每一个组合都建立子类，会造成子类数量爆炸，可以考虑装饰器模式。

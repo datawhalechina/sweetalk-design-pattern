@@ -38,7 +38,6 @@ class ConcreteDecoratorA(Decorator):
         self.__addedState = "New State"
         print("具体装饰对象A的操作")
 
-
 class ConcreteDecoratorB(Decorator):
     def operation(self):
         super().operation()

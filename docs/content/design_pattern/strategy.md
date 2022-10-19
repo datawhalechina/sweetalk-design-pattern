@@ -8,7 +8,7 @@
 
 &emsp;&emsp;进一步地，商场有时会有打折活动（如商品打7折），或满减促销活动（如商品满300-100），程序应能考虑这些活动的情形，实现正确的金额计算。
 
-<img src = img/strategy/example.png width = 50%>
+![](img/strategy/example.png)
 
 ### 1.2 问题分析
 
@@ -23,16 +23,16 @@
 
 ### 1.4 代码实现
 
-* C++语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/cpp/strategy/")
-* Java语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/java/strategy/")
-* python语言实现：[链接]("https://github.com/datawhalechina/sweetalk-design-pattern/src/design_patterns/python/strategy/Strategy.py")
+* C++语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/strategy/)
+* Java语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/strategy/)
+* python语言实现：[链接](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/strategy/Strategy.py)
 * C#语言实现见原书第二版。
 
 ## 2 模式介绍
 
 ### 2.1 定义
 
-&emsp;&emsp;策略模式（Strategy Pattern）是指定义一个算法家族，使得家族内的不同算法都遵从算法家族的接口及方法规范，从而可以实现算法间互相替换。
+&emsp;&emsp;`策略模式（Strategy Pattern）`是指定义一个算法家族，使得家族内的不同算法都遵从算法家族的接口及方法规范，从而可以实现算法间互相替换。
 
 ### 2.2 结构
 
@@ -46,7 +46,7 @@
 
 ## 3 适用场景
 
-&emsp;&emsp;一个系统中有多个算法和类很相似，区分这些类和算法的只是其内部行为。
+> 一个系统中有多个算法和类很相似，区分这些类和算法的只是其内部行为。
 
 &emsp;&emsp;例如：
 * 在导航应用中，有不同的路径规划算法，如针对步行的、骑行的、搭乘公共交通工具的、以及开车的等。主要导航类的主要工作是在地图上渲染出规划好的路径，并不会在意是由和算法生成的路径。此时可以将路径规划算法使用策略模式进行封装，方便与主要导航类的交互。
