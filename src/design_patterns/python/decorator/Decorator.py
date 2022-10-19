@@ -8,14 +8,23 @@
 @Desc    :   None
 '''
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 class Component(object):
     def operation(self):
         pass
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 class ConcreteComponent(Component):
     def operation(self):
         print("具体对象的操作")
 
+<<<<<<< HEAD
 class Decorator(Component):
     __component = None
     def set_component(self,component):
@@ -26,19 +35,48 @@ class Decorator(Component):
 
 class ConcreteDecoratorA(Decorator):
     __addedState = None
+=======
+
+class Decorator(Component):
+    __component = None
+
+    def set_component(self, component):
+        self.__component = component
+
+    def operation(self):
+        if self.__component is not None:
+            self.__component.operation()
+
+
+class ConcreteDecoratorA(Decorator):
+    __addedState = None
+
+>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
     def operation(self):
         super().operation()
         self.__addedState = "New State"
         print("具体装饰对象A的操作")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 class ConcreteDecoratorB(Decorator):
     def operation(self):
         super().operation()
         self.added_behavior()
         print("具体装饰对象B的操作")
+<<<<<<< HEAD
     def added_behavior(self):
         pass
 
+=======
+
+    def added_behavior(self):
+        pass
+
+
+>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 if __name__ == '__main__':
     c = ConcreteComponent()
     d1 = ConcreteDecoratorA()

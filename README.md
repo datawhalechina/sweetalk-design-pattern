@@ -73,16 +73,19 @@ README.md------------------------------------------项目说明
 
 ### 参考书籍
 
-- Java 设计模式
-- Python 设计模式
-- 人人都懂设计模式
-- 设计模式之禅
-- 深入设计模式
-- HeadFirst
 - GoF
+- 深入设计模式
+- 精通 Python 设计模式（第 2 版）
+- 人人都懂设计模式：从生活中领悟设计模式
+- 秒懂设计模式
+- Python 设计模式（第 2 版）
+- 设计模式之禅
+- HeadFirst 设计模式
+- [设计模式 | 菜鸟教程](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)
 
 ### ChangeLog
 
+- v1.1完成笔记 221008
 - v1.0基础结构 220916
 
 ## 关注我们

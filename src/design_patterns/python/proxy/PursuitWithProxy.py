@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 '''
-@File    :   Proxy.py
+@File    :   PursuitWithProxy.py
 @Time    :   2022/09/23 19:00:23
 @Author  :   SheltonXiao
 @Version :   1.0
@@ -8,10 +8,6 @@
 @Desc    :   None
 '''
 
-<<<<<<< HEAD
-=======
-<<<<<<<< HEAD:src/design_patterns/python/Proxy/Proxy.py
->>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 class SchoolGirl(object):
     __name = None
     def get_name(self):
@@ -48,32 +44,6 @@ class Proxy(IGiveGift):
         self.gg.give_flowers()
     def give_chocolate(self):
         self.gg.give_chocolate()
-<<<<<<< HEAD
-=======
-========
-# here put the import lib
-
-
-class Subject(object):
-    def request(self):
-        pass
-
-
-class RealSubject(Subject):
-    def request(self):
-        print("真实的请求")
-
-
-class Proxy(Subject):
-    realSubject = None
-
-    def request(self):
-        if self.realSubject is None:
-            self.realSubject = RealSubject()
-        self.realSubject.request()
->>>>>>>> 9305a284d5636615a178ca823e9c317d628a925c:src/design_patterns/python/proxy/Proxy.py
-
->>>>>>> 9305a284d5636615a178ca823e9c317d628a925c
 
 if __name__ == '__main__':
     jiaojiao = SchoolGirl()
