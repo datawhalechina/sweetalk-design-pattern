@@ -3,6 +3,8 @@ project(sweetalk-design-pattern)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# 状态模式
+add_executable(work state/Work.cpp)
 # 适配器模式
 add_executable(play_adapter adapter/PlayAdapter.cpp adapter/main.cpp)
 # 备忘录模式
