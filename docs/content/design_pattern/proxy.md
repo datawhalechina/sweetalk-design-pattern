@@ -38,7 +38,7 @@
 
 ### 代码实现
 
-*此处我们使用Java语言来实现这一方案，C#语言实现可见原书第二版，本项目的所有语言实现可见本项目Github仓库，其中：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/proxy/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/proxy/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/proxy/Proxy.py)。读者可按需参阅。*
+*此处我们使用Java语言来实现这一方案，C#语言实现可见原书第二版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/proxy/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/proxy/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/proxy/Proxy.py)，读者可按需参阅。*
 
 &emsp;&emsp;首先定义一个被追求者类，是为了使故事可以完整描述，无需实现特别的功能。
 
