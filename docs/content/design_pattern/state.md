@@ -27,7 +27,7 @@
 主要是定义一系列状态以及在状态内部实现该状态的转移逻辑。
 
 - 抽象状态 `State`，定义一个抽象方法，如 `writeProgram`。
-- 实现不同的具体状态 `Concrete` 类：`ForenoonState`、`NoonState`、`AfternoonState`等，并重写抽象方法。
+- 实现不同的具体状态类：`ForenoonState`、`NoonState`、`AfternoonState`等，并重写抽象方法。
 - 实现一个上下文类：`Work` 用来管理当前状态。
 
 下面是一些注意事项：

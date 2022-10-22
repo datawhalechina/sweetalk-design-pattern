@@ -22,10 +22,10 @@
 
 ### 解决方案
 
-- 定义 `Target` 抽象类：`Player`，以及方法 `attact` 和 `defense`。
-- 实现 `ConcreteTarget` 具体类：`Forwards`、`Center` 和 `Guards` 等，并重写抽象方法。
-- 定义 `Adaptee`：`ForeignCenter`，他的方法和抽象类的不一样，需要适配。
-- 使用 `Adapter`：`Translator` 将需要适配的 `Adaptee`：`ForeignCenter` 转换为 `Target`。
+- 定义抽象类：`Player`，以及方法 `attact` 和 `defense`。
+- 实现具体类：`Forwards`、`Center` 和 `Guards` 等，并重写抽象方法。
+- 定义需要适配的类：`ForeignCenter`，他的方法和抽象类的不一样，需要适配。
+- 使用适配器：`Translator` 将需要适配的 `ForeignCenter` 转换为 `Player`。
 
 下面是一些注意事项：
 

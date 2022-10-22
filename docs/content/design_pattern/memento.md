@@ -20,9 +20,9 @@
 
 ### 解决方案
 
-- 首先需要定义一个发起人 `Originator`：游戏角色 `GameRole`，并定义角色方法。当然，最主要要的是保存状态 `saveState` 和恢复状态 `recoveryState` 方法。
-- 然后是备忘录 `Memento`：游戏角色存档 `RoleStateMemento`，里面存有角色在存档时间点的所有状态。
-- 最后是管理者 `Caretaker`：角色状态管理者 `RoleStateCaretaker`，用来设置或获取对应的存档。
+- 首先需要定义一个游戏角色 `GameRole`，并定义角色方法。当然，最主要要的是保存状态 `saveState` 和恢复状态 `recoveryState` 方法。
+- 然后是游戏角色存档 `RoleStateMemento`，里面存有角色在存档时间点的所有状态。
+- 最后是角色状态管理者 `RoleStateCaretaker`，用来设置或获取对应的存档。
 
 ### 代码实现
 
