@@ -73,9 +73,6 @@ public abstract class Observer {
 `ConcreteSubject` 类：
 
 ```java
-import java.util.ArrayList;
-import java.util.List;
-
 public class Boss implements Subject {
     private List<Observer> observers = new ArrayList<>();
     private String action;

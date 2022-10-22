@@ -3,6 +3,7 @@
 # Compiled class file
 *.class
 a.out
+*.iml
 
 # Log file
 *.log
