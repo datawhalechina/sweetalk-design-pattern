@@ -28,7 +28,7 @@
 
 - 抽象状态 `State`，定义一个抽象方法，如 `writeProgram`。
 - 实现不同的具体状态 `Concrete` 类：`ForenoonState`、`NoonState`、`AfternoonState`等，并重写抽象方法。
-- 实现一个上下文类：`Work` 用来管理状态的变化。
+- 实现一个上下文类：`Work` 用来管理当前状态。
 
 下面是一些注意事项：
 
@@ -193,6 +193,10 @@ public class Main {
 ### 结构组成
 
 ![](img/state/state.jpeg)
+
+- State：抽象状态类，定义一个接口用来封装与 Context 的一个特定状态相关的行为。
+- ConcreteState 类：具体状态类，每个子类实现一个与 Context 一个状态相关的行为。
+- Context 类：维护一个 ConcreteState 子类的实例，定义当前状态。
 
 ## 模式评价
 
