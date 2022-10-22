@@ -153,6 +153,12 @@ public class Main {
 }
 ```
 
+执行结果：
+
+```bash
+我胡汉三回来了！ 易管查 关闭NBA直播，继续工作！
+```
+
 ### 结构组成
 
 ![](img/observer/observer.jpeg)

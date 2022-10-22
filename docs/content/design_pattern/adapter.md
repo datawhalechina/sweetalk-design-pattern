@@ -163,6 +163,15 @@ public class Main {
 }
 ```
 
+执行结果：
+
+```bash
+前锋 巴蒂尔 进攻
+后卫 麦克格雷迪 进攻
+外籍中锋 姚明 进攻
+外籍中锋 姚明 防守
+```
+
 ### 结构组成
 
 ![](img/adapter/adapter.jpeg)

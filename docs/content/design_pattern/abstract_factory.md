@@ -167,6 +167,15 @@ public class Main {
 }
 ```
 
+执行结果：
+
+```bash
+在Access中给User表增加一条记录
+在Access中根据ID得到User表一条记录
+在Access中给Department表增加一条记录
+在Access中根据ID得到Department表一条记录
+```
+
 ### 结构组成
 
 ![](img/abstract_factory/abstract_factory.jpeg)
