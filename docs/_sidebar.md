@@ -4,6 +4,7 @@
       * [单一职责原则](content/design_principles/single_responsiblity_principle.md)
       * [开闭原则](content/design_principles/open_closed_principle.md)
       * [依赖倒置原则](content/design_principles/dependence_inversion_principle.md)
+      * [里氏替换原则](content/design_principles/liskov_substituion_principle.md)
       * [迪米特原则](content/design_principles/law_of_demeter.md)
     * 设计模式
       * [简单工厂模式](content/design_pattern/simple_factory.md)
