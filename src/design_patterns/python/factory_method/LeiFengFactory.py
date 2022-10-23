@@ -63,3 +63,10 @@ if __name__ == '__main__':
     student.buy_rice()
     student.sweep()
     student.wash()
+
+    factory = VolunteerFactory()
+    student = factory.create_LeiFeng()
+
+    student.buy_rice()
+    student.sweep()
+    student.wash()

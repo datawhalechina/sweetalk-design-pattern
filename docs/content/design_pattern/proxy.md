@@ -137,6 +137,13 @@ public class ProxyClient {
 }
 ```
 
+&emsp;&emsp;运行结果如下。
+```
+JiaoJiao Li give you a doll
+JiaoJiao Li give you a Flower
+JiaoJiao Li give you a chocolate
+```
+
 ### 结构组成
 
 &emsp;&emsp;代理模式由三个主要角色组成：

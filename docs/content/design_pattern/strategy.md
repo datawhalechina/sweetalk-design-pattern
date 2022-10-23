@@ -12,7 +12,7 @@
 
 ### 模式定义
 
-&emsp;&emsp;`策略模式（Strategy Pattern）`是指定义一个算法家族，使得家族内的不同算法都遵从算法家族的接口及方法规范，从而可以实现算法间互相替换，且不会影响到使用算法的客户。
+> &emsp;&emsp;`策略模式（Strategy Pattern）`是指定义一个算法家族，使得家族内的不同算法都遵从算法家族的接口及方法规范，从而可以实现算法间互相替换，且不会影响到使用算法的客户。
 
 ### 问题分析
 
@@ -148,6 +148,13 @@ public class CacheClient {
         System.out.println(csuper3.getResult(price * num));
     }
 }
+```
+
+&emsp;&emsp;运行结果如下。
+```
+1000
+700
+800
 ```
 
 ### 结构组成

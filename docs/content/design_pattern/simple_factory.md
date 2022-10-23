@@ -8,7 +8,7 @@
 
 ### 模式定义
 
-&emsp;&emsp;`简单工厂模式（Simple Factory Pattern）`是用一个单独的类来实现具体的实例化过程，避免客户端对具体实例化过程的显式指定。
+> &emsp;&emsp;`简单工厂模式（Simple Factory Pattern）`是用一个单独的类来实现具体的实例化过程，避免客户端对具体实例化过程的显式指定。
 
 ### 问题分析
 
@@ -115,6 +115,11 @@ public class Calculator {
         System.out.println(operation.getResult());
     }
 }
+```
+
+&emsp;&emsp;运行结果如下。
+```
+3
 ```
 
 ### 结构组成
