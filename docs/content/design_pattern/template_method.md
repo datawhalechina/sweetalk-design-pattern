@@ -4,7 +4,9 @@
 
 ### 问题描述
 
-抄考题，包括题目和答案。
+回想小时候的随堂测验，老师在黑板上抄题目，同学们在下面先抄题目，再做答案。经常有同学眼神不好，会把题目抄错。
+
+但是在考试时，就不会出现这种情况。因为大家拿到的考试试卷都是一样的。这里的考试试卷类似于一个模板，提取了相同的部分。
 
 ### 模式定义
 
@@ -20,15 +22,14 @@
 
 ### 解决方案
 
-1. 对于不同的学生，只有给出的答案不同，其他全都一样
-    - 将所有的重复代码都上升到父类，使其称为子类的**模板** --> 将公共的试题代码写到父类，试题和答案都继承于它
-    - 只将答案改成一个虚方法，给继承的子类重写
-2. 在客户端代码中，将子类变量的声明改成父类，利用多态实现代码复用
+- 对于不同的学生，只有给出的答案不同，其他内容全都一样；
+    - 将所有的重复代码都上升到父类，使其称为子类的**模板** --> 将公共的试题代码写到父类，试题和答案都继承于它；
+    - 只将答案改成一个虚方法，给继承的子类重写；
+- 在客户端代码中，将子类变量的声明改成父类，利用多态实现代码复用。
 
 ### 代码实现
 
-`TestPaper` 抽象类：
-
+考题试卷的抽象类：
 ```java
 public abstract class TestPaper {
     public void testQuestion1() {
@@ -52,10 +53,9 @@ public abstract class TestPaper {
 
     protected abstract String answer3();
 }
-
 ```
-`TestPaperA` 具体类：
 
+学生甲抄试卷的具体类：
 ```java
 public class TestPaperA extends TestPaper {
     @Override
@@ -74,8 +74,8 @@ public class TestPaperA extends TestPaper {
     }
 }
 ```
-`TestPaperB` 具体类：
 
+学生乙抄试卷的具体类：
 ```java
 public class TestPaperB extends TestPaper {
     @Override
@@ -95,8 +95,7 @@ public class TestPaperB extends TestPaper {
 }
 ```
 
-`TemplateMethodMain` 方法：
-
+客户端代码：
 ```java
 public class TemplateMethodMain {
     public static void main(String[] args) {
@@ -138,9 +137,8 @@ public class TemplateMethodMain {
 
 ![模板方法UML](img/template_method/TemplateMethodUML.png)
 
-以上述问题为例，结构如下
-
-![问题实例的UML](img/template_method/TestPaperUML.png)
+- AbstractClass：抽象类，也就是一个抽象模板，定义并实现了一个模板方法。这个模板方法一般是一个具体方法，给出了顶级逻辑的骨架；
+- ConcreteClass：子类，实现父类所定义的一个或多个抽象方法。每一个ConcreteClass都可以给出抽象方法的不同实现。
 
 ## 模式评价
 
@@ -151,8 +149,8 @@ public class TemplateMethodMain {
 
 ### 实际应用
 
+- Spring 中对 Hibernate 的支持，将一些已经定好的方法封装起来，比如开启事务、获取 Session、关闭 Session 等，程序员不重复写那些已经规范好的代码，直接丢一个实体就可以保存；
 - 在造房子的时候，地基、走线、水管都一样，只有在建筑的后期才有加壁橱加栅栏等差异；
-- Spring 中对 Hibernate 的支持，将一些已经定好的方法封装起来，比如开启事务、获取 Session、关闭 Session 等，程序员不重复写那些已经规范好的代码，直接丢一个实体就可以保存
 
 ### 优点缺点
 
