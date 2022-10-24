@@ -226,6 +226,7 @@ public class BuilderMain {
 ```
 
 执行结果：
+
 ![Java code输出](img/builder/JavaCodeOutPut.png)
 
 ### 结构组成
