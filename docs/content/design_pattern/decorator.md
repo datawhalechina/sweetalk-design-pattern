@@ -16,7 +16,7 @@
 
 ### 模式定义
 
-> &emsp;&emsp;`装饰模式（Decorator Pattern）`是指创建一个装饰类，来包装原有的类，从而实现动态地向一个现有的对象添加一些额外的职责，同时不改变其原有的结构。`装饰模式`比生成子类更为灵活。
+&emsp;&emsp;`装饰模式（Decorator Pattern）`是指创建一个装饰类，来包装原有的类，从而实现动态地向一个现有的对象添加一些额外的职责，同时不改变其原有的结构。`装饰模式`比生成子类更为灵活。
 
 ### 问题分析
 
@@ -38,7 +38,7 @@
 
 ### 代码实现
 
-*此处我们使用Java语言来实现这一方案，C#语言实现可见原书第二版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/decorator/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/decorator/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/decorator/DecoratorFinery.py)，读者可按需参阅。*
+*此处我们使用Java语言来实现这一方案，C#语言实现可见原书原版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/decorator/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/decorator/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/decorator/DecoratorFinery.py)，读者可按需参阅。*
 
 &emsp;&emsp;定义`Person`类，相当于`ConcreteComponent`。
 

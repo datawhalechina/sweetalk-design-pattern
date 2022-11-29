@@ -8,7 +8,7 @@
 
 ### 模式定义
 
-> &emsp;&emsp;`简单工厂模式（Simple Factory Pattern）`是用一个单独的类来实现具体的实例化过程，避免客户端对具体实例化过程的显式指定。
+&emsp;&emsp;`简单工厂模式（Simple Factory Pattern）`是用一个单独的类来实现具体的实例化过程，避免客户端对具体实例化过程的显式指定。
 
 ### 问题分析
 
@@ -25,7 +25,7 @@
 
 ### 代码实现
 
-*此处我们使用Java语言来实现这一方案，C#语言实现可见原书第二版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/simple_factory/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/simple_factory//)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/simple_factory/SimpleFactory.py)，读者可按需参阅。*
+*此处我们使用Java语言来实现这一方案，C#语言实现可见原书原版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/simple_factory/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/simple_factory//)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/simple_factory/SimpleFactory.py)，读者可按需参阅。*
 
 &emsp;&emsp;首先定义一个抽象运算类。
 
