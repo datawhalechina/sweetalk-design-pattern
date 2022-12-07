@@ -1,12 +1,12 @@
 # 桥接模式
 
-## 问题引入
+## 模式引入
 
 ### 问题描述
 
 对于不同品牌的手机，软件基本无法兼容。因此如果手机需要增加软件，就需要针对不同品牌的手机分别实现软件功能。
 
-### **模式定义**
+### 模式定义
 
 桥接模式是将抽象部分与其实现部分分离，使它们都可以独立地变化。
 
@@ -24,21 +24,24 @@
 
 包括以下四个角色：
 
-1.Abstraction(抽象类)：用于定义抽象类的接口，其中定义了一个具有关联关系的Implementor的对象。
-
-2.RefinedAbstraction(扩充抽象类)：继承并实现抽象类中的接口，并在其中调用Implementor对象的相关业务方法。
-
-3.Implementor(实现类)：用于定义实现类的接口，提供基本的业务方法供抽象类调用，以完成复杂的操作。
-
-4.ConcreteImplementor(具体实现类)：继承并实现Implementor的接口，在不同的具体实现类中提供不同的操作方法，通过向上转型的方式完成方法的调用。
+- Abstraction（抽象类）：用于定义抽象类的接口，其中定义了一个具有关联关系的Implementor 的对象。
+- RefinedAbstraction（扩充抽象类）：继承并实现抽象类中的接口，并在其中调用Implementor 对象的相关业务方法。
+- Implementor（实现类）：用于定义实现类的接口，提供基本的业务方法供抽象类调用，以完成复杂的操作。
+- ConcreteImplementor（具体实现类）：继承并实现 Implementor 的接口，在不同的具体实现类中提供不同的操作方法，通过向上转型的方式完成方法的调用。
 
 ### 代码实现
+
+`HandsetSoft` 实现类：
 
 ```java
 public abstract class HandsetSoft {
     public abstract void run();
 }
+```
 
+`HandsetSoft` 具体实现类：
+
+```java
 public class HandsetGame extends HandsetSoft {
     @Override
     public void run() {
@@ -52,7 +55,11 @@ public class HandsetAddressList extends HandsetSoft {
         System.out.println("运行手机通讯录");
     }
 }
+```
 
+`HandsetBrand` 抽象类：
+
+```java
 public abstract class HandsetBrand {
     protected HandsetSoft soft;
 
@@ -62,7 +69,11 @@ public abstract class HandsetBrand {
 
     public abstract void run();
 }
+```
 
+`HandsetBrand` 扩展抽象类：
+
+```java
 public class HandsetBrandM extends HandsetBrand {
     @Override
     public void run() {
@@ -76,7 +87,11 @@ public class HandsetBrandN extends HandsetBrand {
         soft.run();
     }
 }
+```
 
+`Main` 方法：
+
+```java
 public class Main {
     public static void main(String[] args) {
         HandsetBrand ab;
@@ -99,33 +114,40 @@ public class Main {
 }
 ```
 
-### **结构**组成
+执行结果：
+
+```bash
+运行手机游戏
+运行手机通讯录
+运行手机游戏
+运行手机通讯录
+```
+
+### 结构组成
 
 ![image-20221017164911912](img/bridge/bridge.JPG)
 
 ## 模式评价
 
-**适合场景**
+### 适合场景
 
-1.对于使用较多类继承问题而导致紧耦合、扩展性差的系统。
+- 对于使用较多类继承问题而导致紧耦合、扩展性差的系统。
+- 对于存在多个独立变化并需要灵活扩展维度的需求。
 
-2.对于存在多个独立变化并需要灵活扩展维度的需求。
+### 实际应用
 
-**实际应用**
+- JDBC 规范和不同数据库厂商驱动的实现。
+- Spring 中可以根据客户的需求能够动态切换不同的数据源。
+- Nginx 的模块架构就应用了桥接模式，使用了`nginx_module_t` 定义模块，结构体里有若干函数指针和扩展字段，然后桥接实现了丰富多彩的 core、conf、event、stream、http 等功能模块，搭建起整个 Nginx 框架。
 
-1.JDBC 规范和不同数据库厂商驱动的实现
+### 优点缺点
 
-2.spring中可以根据客户的需求能够动态切换不同的数据源。
+模式优点：
 
-3.Nginx的模块架构就应用了桥接模式，使用了nginx_module_t定义模块，结构体里有若干函数指针和扩展字段，然后桥接实现了丰富多彩的core、conf、event、stream、http等功能模块，搭建起整个Nginx框架。
+- 避免了继承导致的类爆炸问题。
+- 具备灵活的可扩展性。
 
-**模式优点**
+模式缺点：
 
-1.避免了继承导致的类爆炸问题
-
-2.具备灵活的可扩展性
-
-**模式缺点**
-
-将抽象和实现分离会增加设计的难度
+- 将抽象和实现分离会增加设计的难度。
 
