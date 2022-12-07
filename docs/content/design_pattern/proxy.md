@@ -4,27 +4,27 @@
 
 ### 问题描述
 
-&emsp;&emsp;隔壁班的卓贾易想追求娇娇，但是他自己不好意思，就委托和娇娇同班的戴励帮助他。卓贾易给娇娇先后买了芭比娃娃、花、巧克力，饼委托戴励送给娇娇，却没想给娇娇和戴励创造了相处的机会。娇娇和戴励通过接触互生情愫，最后在一起了。卓贾易自然是很生气，一番追求却为他人做了嫁衣。但细细想来，虽说一直是卓贾易给娇娇买的礼物，但娇娇自始至终都是从戴励手里拿到的礼物，她并未接触过送礼之人——卓贾易。
+隔壁班的卓贾易想追求娇娇，但是他自己不好意思，就委托和娇娇同班的戴励帮助他。卓贾易给娇娇先后买了芭比娃娃、花、巧克力，饼委托戴励送给娇娇，却没想给娇娇和戴励创造了相处的机会。娇娇和戴励通过接触互生情愫，最后在一起了。卓贾易自然是很生气，一番追求却为他人做了嫁衣。但细细想来，虽说一直是卓贾易给娇娇买的礼物，但娇娇自始至终都是从戴励手里拿到的礼物，她并未接触过送礼之人——卓贾易。
 
-&emsp;&emsp;现在我们想用程序来描述这一个故事，关键之处在于准确描述卓贾易、戴励及娇娇三者之间的行动关系。如果我们只描述了追求者卓贾易，和被追求者娇娇，则与实际情况不符，因为娇娇并不认识卓贾易；而若我们只描述了代理戴励，和被追求者娇娇，亦与实际情况不符，因为礼物是卓贾易买的，戴励并没有礼物直接送给娇娇。为了准确描述他们三人的关系，我们可以考虑使用`代理模式`。
+现在我们想用程序来描述这一个故事，关键之处在于准确描述卓贾易、戴励及娇娇三者之间的行动关系。如果我们只描述了追求者卓贾易，和被追求者娇娇，则与实际情况不符，因为娇娇并不认识卓贾易；而若我们只描述了代理戴励，和被追求者娇娇，亦与实际情况不符，因为礼物是卓贾易买的，戴励并没有礼物直接送给娇娇。为了准确描述他们三人的关系，我们可以考虑使用`代理模式`。
 
 ### 模式定义
 
-> &emsp;&emsp;`代理模式（Proxy Pattern）`是指实现一个类代表另一个类的功能，为其他对象提供一种代理以控制对这个对象的访问。
+`代理模式（Proxy Pattern）`是指实现一个类代表另一个类的功能，为其他对象提供一种代理以控制对这个对象的访问。
 
 ### 问题分析
 
-&emsp;&emsp;`代理模式（Proxy Pattern）`可以应用到这一问题中。
+`代理模式（Proxy Pattern）`可以应用到这一问题中。
 
-&emsp;&emsp;这一问题中有三个类型的角色，追求者（卓贾易），代理（戴励）和被追求者（娇娇）。他们三者间的关系满足，追求者（卓贾易）委托代理（戴励），通过代理（戴励）给被追求者（娇娇）送礼物，而被追求者（娇娇）只与代理（戴励）有接触。
+这一问题中有三个类型的角色，追求者（卓贾易），代理（戴励）和被追求者（娇娇）。他们三者间的关系满足，追求者（卓贾易）委托代理（戴励），通过代理（戴励）给被追求者（娇娇）送礼物，而被追求者（娇娇）只与代理（戴励）有接触。
 
-&emsp;&emsp;若使用代理模式描述，即代理（戴励）代表了追求者（卓贾易）的追求（赠送礼物）的功能，被追求者（娇娇）仅与代理（戴励）接触便收到了礼物。这样就实现了他们三人关系的准确描述。
+若使用代理模式描述，即代理（戴励）代表了追求者（卓贾易）的追求（赠送礼物）的功能，被追求者（娇娇）仅与代理（戴励）接触便收到了礼物。这样就实现了他们三人关系的准确描述。
 
 ## 模式实现
 
 ### 解决方案
 
-&emsp;&emsp;使用`代理模式`来解决这一问题。
+使用`代理模式`来解决这一问题。
 1. 创建送礼物的抽象类`IGiveGift`，定义追求者和代理的共用接口：    
     * 送玩具方法`GiveDolls()`;
     * 送花方法`GiveFlowers()`;
@@ -38,9 +38,9 @@
 
 ### 代码实现
 
-*此处我们使用Java语言来实现这一方案，C#语言实现可见原书第二版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/proxy/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/proxy/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/proxy/Proxy.py)，读者可按需参阅。*
+*此处我们使用Java语言来实现这一方案，C#语言实现可见原书原版，本项目的所有语言实现可见本项目Github仓库，其中包括：[C++](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/cpp/proxy/)，[Java](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/java/proxy/example)，[python](https://github.com/datawhalechina/sweetalk-design-pattern/tree/main/src/design_patterns/python/proxy/Proxy.py)，读者可按需参阅。*
 
-&emsp;&emsp;首先定义一个被追求者类，是为了使故事可以完整描述，无需实现特别的功能。
+首先定义一个被追求者类，是为了使故事可以完整描述，无需实现特别的功能。
 
 ```Java
 public class SchoolGirl {
@@ -62,7 +62,7 @@ public class SchoolGirl {
 }
 ```
 
-&emsp;&emsp;定义送礼物的抽象类`IGiveGift`。
+定义送礼物的抽象类`IGiveGift`。
 
 ```java
 public interface GiveGift {
@@ -72,7 +72,7 @@ public interface GiveGift {
 }
 ```
 
-&emsp;&emsp;追求者类增加了实现送礼物的接口的改动。
+追求者类增加了实现送礼物的接口的改动。
 
 ```Java
 public class Pursuit implements GiveGift{
@@ -96,7 +96,7 @@ public class Pursuit implements GiveGift{
 }
 ```
 
-&emsp;&emsp;代理类，是唯一即认识追求者，又认识被追求者的类。初始化时与追求者及被追求者建立关联，实现送礼物方法时调用追求者的同名方法。
+代理类，是唯一即认识追求者，又认识被追求者的类。初始化时与追求者及被追求者建立关联，实现送礼物方法时调用追求者的同名方法。
 
 ```Java
 public class Proxy implements GiveGift {
@@ -120,7 +120,7 @@ public class Proxy implements GiveGift {
 }
 ```
 
-&emsp;&emsp;客户端如下。
+客户端如下。
 
 ```java
 public class ProxyClient {
@@ -137,7 +137,7 @@ public class ProxyClient {
 }
 ```
 
-&emsp;&emsp;运行结果如下。
+运行结果如下。
 ```
 JiaoJiao Li give you a doll
 JiaoJiao Li give you a Flower
@@ -146,16 +146,16 @@ JiaoJiao Li give you a chocolate
 
 ### 结构组成
 
-&emsp;&emsp;代理模式由三个主要角色组成：
+代理模式由三个主要角色组成：
  1. 访问接口：在这个例子中具体为送礼物的行为；
  2. 实体类：在这个例子中具体为追求者；
  3. 替代实体的代理类：在这个例子中具体为代理。
 
-&emsp;&emsp;结构图如下：
+结构图如下：
 
 ![案例UML](img/proxy/exampleUML.png)
 
-&emsp;&emsp;代理模式的通用结构示意图如下
+代理模式的通用结构示意图如下
 
 ![代理模式UML](img/proxy/proxyUML.png)
 
@@ -163,9 +163,9 @@ JiaoJiao Li give you a chocolate
 
 ### 适用场景
 
-&emsp;&emsp;不方便直接访问对象时，为不宜直接访问的对象提供一个访问层。    
+不方便直接访问对象时，为不宜直接访问的对象提供一个访问层。    
 
-&emsp;&emsp;使用代理模式的方式分为以下几种：    
+使用代理模式的方式分为以下几种：    
 * 本地执行远程服务（远程代理）：适用于服务对象位于远程服务器上的情形，可以为一个对象在不同的地址空间提供局部代表。
 * 延迟初始化（虚拟代理）：如果你有一个偶尔使用的重量级服务对象，一直保持该对象运行会消耗系统资源时，可使用代理模式。
 * 访问控制（保护代理/安全代理）：如果只希望特定客户端使用服务对象，对象可以是操作系统中的重要部分，而客户端则是各种已启动程序，可使用代理模式。
@@ -181,7 +181,7 @@ JiaoJiao Li give you a chocolate
 
 ### 优点缺点
 
-&emsp;&emsp;模式优点包括：
+模式优点包括：
 
 * 引入代理后，职责清晰；
 * 引入代理后，可扩展多种用途，如：    
@@ -189,7 +189,7 @@ JiaoJiao Li give you a chocolate
     * 虚拟代理可以存放实例化时间很长的真实对象。
 * 符合“开放封闭原则”，无需对服务器或客户端进行修改就创建新的代理。
 
-&emsp;&emsp;模式缺点包括：
+模式缺点包括：
 
 * 代码可能变得复杂，因为需要新建许多类；
 * 服务响应可能会延迟。
