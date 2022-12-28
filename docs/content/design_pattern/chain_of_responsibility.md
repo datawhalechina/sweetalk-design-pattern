@@ -116,14 +116,14 @@ public class MajorDemo extends Manager {
     }
 }
 
-public class MajorDemo extends Manager {
-    protected MajorDemo(String name) {
+public class CommonManager extends Manager {
+    protected CommonManager(String name) {
         super(name);
     }
 
     @Override
     public void requestApplications(Request request) {
-        if(request.getRequestType() == "请假" && request.getNumber() <= 5) {
+        if(request.getRequestType() == "请假" && request.getNumber() <= 2) {
             System.out.println(name + "：" + request.getRequestContent() + " 数量" + request.getNumber() + " 被批准" );
         }else {
             if(superior != null) {
